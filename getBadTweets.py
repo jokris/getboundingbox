@@ -35,7 +35,7 @@ def halfWithin(box, bounds):
 def hasBadLocation(json_data): 
     # geotag filter (BOUNDING BOX) (monroe)
     
-    # ccordinate from input
+    # coordinate from input (here is Greater Rochester)
     coords = [-78.50480611, 42.00012444, -76.07799052, 43.36077324]
     if json_data["coordinates"] is not None:
         coord=json_data["coordinates"]["coordinates"]
@@ -89,6 +89,9 @@ with open(input, 'r') as reader:
             profile = json_line['user']
             locations.append(profile['location'])
             bad = bad + 1
+            #For Acessing the google Place API
+            #credentials = []
+                
             #location = profile['location']
             #locString = locations[-1] #+ " NY"
             #url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+locString+"&sensor=false&key=AIzaSyAmLISNSH9wHzdmWiCNMOP-tgY4O1Jie-M"
